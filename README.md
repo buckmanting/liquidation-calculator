@@ -1,5 +1,11 @@
-# node-bootstrap-handlebars
+# Liquidation Calculator
 
-This is a node app to use as a starting point for new projects.  It comes loaded with Express, Bootstrap (with LESS), and hbs (an express view engine for Handlebars).
+## What is this?
+Works out how much the employees of some people could be owed. Really not useful to anyone, but a select few.
 
-Feel free to use it for yourself!
+## Get it going
+Just the standard `npm i` to install dependencies.
+
+Then to run `npm start`, or to start with a file watch `npm run start:local`.
+
+Easy 👍
