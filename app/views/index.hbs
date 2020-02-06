@@ -1,6 +1,9 @@
-<h1>Liquidation calculator</h1>
-<div class="row">
-    <div class="">
+<div class="row justify-content-md-center">
+    <h1>Liquidation calculator</h1>
+</div>
+
+<div class="row justify-content-md-center">
+    <div class="col-9">
         <div class="card">
             <div class="card-header">
                 Calculate
@@ -23,8 +26,10 @@
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-
-                <div id="owed"></div>
+                <div class="row justify-content-md-center mt-4">
+                    <div id="owed" class="alert alert-success" role="alert" style="display: none">
+                    </div>
+                </div>
             </div>
             <div class="card-footer text-muted">
                 Please note: THIS IS NOT LEGALLY BINDING. This is just to give a rough guideline of what you could
@@ -50,6 +55,11 @@
 
         var holidayPay = (model.weeklyPay / 5) * model.holidayOwed;
 
+        let maxStatPay = yearsEmployed * model.weeklyPay;
+        let baseStatPay = fullYearsEmployed * model.weeklyPay;
+        let maxClaim = maxStatPay + holidayPay;
+        let baseClaim = baseStatPay + holidayPay;
+        
         document.getElementById('owed').innerHTML = `
 <p>
 You were employed for approximately ${daysEmployed} days, or ${yearsEmployed} years.
@@ -58,9 +68,13 @@ You were employed for approximately ${daysEmployed} days, or ${yearsEmployed} ye
 You might be entitled to £${holidayPay} in holiday pay.
 </p>
 <p>
-You might be entitled to £${yearsEmployed * model.weeklyPay} in Statutory notice pay, or at least £${fullYearsEmployed * model.weeklyPay}
+You might be entitled to £${maxStatPay} in Statutory notice pay, or at least £${baseStatPay}
+</p>
+<p>
+Your claim could be worth up to £${maxClaim}, or at least £${baseClaim}
 </p>
 `;
+        document.getElementById('owed').style.display = 'block';
 
         return false;
     }
