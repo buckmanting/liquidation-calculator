@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="weeklyPay">weekly pay (£)</label>
-                        <input type="number" class="form-control" id="weeklyPay" required>
+                        <input type="number" class="form-control" id="weeklyPay" step=".01" required>
                     </div>
 
                     <div class="form-group">
@@ -59,7 +59,7 @@
         let baseStatPay = fullYearsEmployed * model.weeklyPay;
         let maxClaim = maxStatPay + holidayPay;
         let baseClaim = baseStatPay + holidayPay;
-        
+
         document.getElementById('owed').innerHTML = `
 <p>
 You were employed for approximately ${daysEmployed} days, or ${yearsEmployed} years.
