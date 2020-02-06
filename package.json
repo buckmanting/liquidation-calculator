@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "start:local": "nodemon server.js"
+    "start": "node app/server.js",
+    "start:local": "nodemon app/server.js"
   },
   "dependencies": {
     "express": "^4.17.1",
