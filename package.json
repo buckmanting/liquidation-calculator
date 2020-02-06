@@ -7,8 +7,8 @@
     "start:local": "nodemon server.js"
   },
   "dependencies": {
-    "express": "3.0.4",
-    "hbs": "*",
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
     "less-middleware": "*"
   },
   "devDependencies": {
