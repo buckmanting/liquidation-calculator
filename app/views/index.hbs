@@ -1,7 +1,7 @@
 
 <h1>Liquidation calculator</h1>
 
-<form onsubmit="calculate(this)">
+<form onsubmit="return calculate()">
     <div class="form-group">
         <label for="dateStarted">date started</label>
         <input type="date" class="form-control" id="dateStarted">
@@ -16,11 +16,17 @@
         <input type="number" class="form-control" id="holidayOwed">
     </div>
 
-    <button type="submit" class="btn btn-primary">Primary</button>
+    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 
 <script type="application/javascript">
-    var calculate = function (model) {
+    var calculate = function () {
+        var model = {
+            dateStarted: document.getElementById('dateStarted').value,
+            weeklyPay: document.getElementById('weeklyPay').value,
+            holidayOwed: document.getElementById('holidayOwed').value
+        };
+
         console.log(model);
     }
 </script>
